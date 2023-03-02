@@ -335,7 +335,7 @@ a {
   margin-bottom: 1px;
 
   padding-top: 88px;
-  padding-bottom: 13px;
+  padding-bottom: 15px;
   box-sizing: border-box;
   display: flex;
   align-items: flex-end;
@@ -396,7 +396,7 @@ a {
   width: 91.67%;
   border: 3px solid #8a784b;
   margin: 0 auto;
-  padding: 25px 23px;
+  padding: 25px 23px 27px 23px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -407,14 +407,15 @@ a {
   text-transform: uppercase;
   font-weight: 400;
   font-style: normal;
-  line-height: 1;
+  line-height: 1.2;
 }
 
 .list-label {
   display: flex;
+  flex-wrap: wrap;
   text-transform: uppercase;
   font-size: 14px;
-  color: #8a784b;
+  color: #b59f5b;
   font-weight: 700;
   margin-bottom: 10px;
 }
@@ -504,6 +505,7 @@ a {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
+  box-sizing: border-box;
 }
 
 .cost {
@@ -523,7 +525,7 @@ a {
 
 .buy-button {
   width: 50%;
-  padding: 16px 25px;
+  height: 47px;
   border: none;
   background-color: #b59f5b;
   color: #ffffff;
@@ -541,6 +543,7 @@ a {
   .store {
     flex-direction: column;
     align-items: center;
+    margin-top: 27px;
   }
 
   .store-img:nth-child(1) {
@@ -704,6 +707,9 @@ a {
     display: flex;
     margin-bottom: 60px;
     border: none;
+    gap: 30px;
+    justify-content: space-between;
+    align-items: start;
   }
 
   .section:last-child {
@@ -715,7 +721,8 @@ a {
   }
 
   .excerpt {
-    margin-left: 30px;
+    width: 50%;
+    flex-shrink: 0;
   }
 
   .header-content {
@@ -746,11 +753,12 @@ a {
   }
 
   .header-content:hover {
-    color: #423c2a;
-  }
+    color: #494232
+  }                              /*я не понимаю, как доставать цвет для ховера. Я с помощью пипетки измеряю цвет текста с ховером и без - во всех случаях это один и тот-же цвет.
+  я вижу, что цвет шрифта становится ярче, но я пробовала увеличивать font-weight - ничего не менялось при наведении  */
 
   .prewiew-content:hover {
-    color: #c4bfab;
+    color: #c5c0ad;
   }
 
   .list-label-item:hover {
@@ -758,7 +766,7 @@ a {
   }
 
   .preview-aside:hover {
-    color: #423c2a;
+    color: #494232;
   }
 
 }
@@ -775,15 +783,13 @@ a {
   margin-bottom: 41px;
 }
 
-.title-news-aside {
-  margin-top: 13px;
-}
 
 
 .section-aside {
   display: flex;
   margin-bottom: 22px;
   margin-top: 20px;
+  justify-content: space-between;
 }
 
 
@@ -827,9 +833,10 @@ a {
   background-color: #f4f7f6;
 }
 
-.field:focus {
+.field:focus,
+.field-mail:focus {
   outline: none;
-  border-bottom: 1px solid #ebe7d7;
+  border: 1px solid #b59f5b;
 }
 
 .search-button {
@@ -862,10 +869,6 @@ a {
   background-color: #f4f7f6;
 }
 
-.field-mail:focus {
-  outline: none;
-  border-bottom: 1px solid #ebe7d7;
-}
 
 .send-button {
   margin-top: 17px;
@@ -933,6 +936,10 @@ a {
   vertical-align: super;
 }
 
+.excerpt-aside {
+  width: calc(100% - 90px);
+}
+
 @media (min-width: 641px) {
   .sidebar {
     width: 274px;
@@ -982,13 +989,16 @@ a {
     margin-bottom: 58px;
   }
 
-  .search-button:hover {
-    border: 1px solid #af964d;
+  .field:hover,
+  .search-button:hover,
+  .field-mail:hover {
+    border-bottom: 1px solid #e6dfc8;
   }
 
   .buy-button:hover,
   .send-button:hover {
-    border-top: 1px solid #b59f5b;
+    border-top: 1px solid #ebe7d7;
+   
   }
 
   .send-button,
@@ -1000,11 +1010,15 @@ a {
   .tag:hover {
     color: #423c2a;
   }
+
+  .theme:hover {
+    color: #423c2a;
+  } 
+
 }
 
-.theme:hover {
-  color: #423c2a;
-}
+             /*я не понимаю, как доставать цвет для ховера. Я с помощью пипетки измеряю цвет текста с ховером и без - во всех случаях это один и тот-же цвет.
+я вижу, что цвет шрифта становится ярче, но я пробовала увеличивать font-weight - ничего не менялось при наведении  */
 
 /*====================================aside end============================*/
 
@@ -1079,9 +1093,9 @@ a {
 
 /*=========================Popup====================================*/
 
-.feedback {
+/*.feedback {
   display: none;
-}
+}*/
 
 .popup-group {
   position: fixed;
@@ -1188,10 +1202,9 @@ a {
 }
 
 .field-textarea {
-  min-height: 130px;
+  height: 130px;
   width: 100%;
-  max-width: 100%;
-  min-width: 100%;
+  resize: none;
   font-family: inherit;
   font-size: inherit;
 
