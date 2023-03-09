@@ -420,8 +420,12 @@ a {
   margin-bottom: 10px;
 }
 
-.list-label-item:nth-child(n+2) {
-  margin-left: 18px;
+.list-label-item {
+  margin-right: 18px;
+}
+
+.list-label-item:last-child {
+  margin-right: 0;
 }
 
 .section {
@@ -488,6 +492,14 @@ a {
   margin-top: -33px;
   margin-bottom: 27px;
 
+}
+
+.header-content-store {
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 400;
+  color: #0f0d0e;
+  line-height: 1.2;
 }
 
 .detail {
@@ -579,6 +591,10 @@ a {
   }
 
   .header-content {
+    font-size: 15px;
+  }
+
+  .header-content-store {
     font-size: 15px;
   }
 
@@ -730,6 +746,11 @@ a {
     margin-top: 6px;
   }
 
+  .header-content-store {
+    font-size: 17px;
+    margin-top: 6px;
+  }
+
   .preview {
     margin-top: 42px;
   }
@@ -753,20 +774,15 @@ a {
   }
 
   .header-content:hover {
-    color: #494232
-  }                              /*я не понимаю, как доставать цвет для ховера. Я с помощью пипетки измеряю цвет текста с ховером и без - во всех случаях это один и тот-же цвет.
-  я вижу, что цвет шрифта становится ярче, но я пробовала увеличивать font-weight - ничего не менялось при наведении  */
+    color: #b59f5b;
+  }                              
 
   .prewiew-content:hover {
-    color: #c5c0ad;
+    color: #b59f5b;
   }
 
-  .list-label-item:hover {
+  .list-label-item:hover, .detail:hover {
     text-decoration: underline;
-  }
-
-  .preview-aside:hover {
-    color: #494232;
   }
 
 }
@@ -1008,17 +1024,16 @@ a {
   }
 
   .tag:hover {
-    color: #423c2a;
+    border-color: #b59f5b;
   }
 
   .theme:hover {
-    color: #423c2a;
+    color: #b59f5b;
   } 
 
 }
 
-             /*я не понимаю, как доставать цвет для ховера. Я с помощью пипетки измеряю цвет текста с ховером и без - во всех случаях это один и тот-же цвет.
-я вижу, что цвет шрифта становится ярче, но я пробовала увеличивать font-weight - ничего не менялось при наведении  */
+             
 
 /*====================================aside end============================*/
 
@@ -1029,7 +1044,7 @@ a {
 
 .socials {
   display: flex;
-  width: 91.7%;
+  width: 100%;
   box-sizing: border-box;
   margin: 0 auto;
   padding-top: 30px;
@@ -1063,7 +1078,11 @@ a {
 
 
 .main-footer {
+  width: 100%;
   margin-top: 20px;
+  padding-right: 15px;
+  padding-left: 15px;
+  box-sizing: border-box;
 }
 
 .copyright {
