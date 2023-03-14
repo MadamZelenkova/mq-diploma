@@ -1030,6 +1030,10 @@ a {
   .theme:hover {
     color: #b59f5b;
   } 
+  
+  .preview-aside:hover {
+    color: #b59f5b;
+  }
 
 }
 
